@@ -1,0 +1,43 @@
+{
+  "name": "@starter/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false --include ../../packages/shared/src --include ../../.env.local --include ../../.env src/server.ts",
+    "build": "tsup",
+    "start": "node --enable-source-maps dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "role:set": "tsx src/set-role.ts"
+  },
+  "dependencies": {
+    "@starter/shared": "workspace:*",
+    "better-auth": "catalog:",
+    "cors": "2.8.6",
+    "drizzle-orm": "catalog:",
+    "express": "5.2.1",
+    "helmet": "8.3.0",
+    "pg": "catalog:",
+    "pino": "catalog:",
+    "pino-http": "11.0.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.6",
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "@types/supertest": "7.2.1",
+    "drizzle-kit": "0.31.11",
+    "pino-pretty": "catalog:",
+    "supertest": "7.3.1",
+    "tsup": "8.5.1",
+    "tsx": "4.23.15",
+    "typescript": "catalog:",
+    "vitest": "5.0.3"
+  }
+}

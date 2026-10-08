@@ -1,0 +1,24 @@
+packages:
+  - apps/*
+  - packages/*
+
+# One version of each shared dependency across the API, web app, and shared
+# package. Reference them with "catalog:" in a workspace package.json.
+catalog:
+  "@types/node": 22.20.1
+  "@types/pg": 8.23.1
+  better-auth: 1.7.7
+  drizzle-orm: 0.45.3
+  pg: 8.23.1
+  pino: 10.4.0
+  pino-pretty: 13.2.0
+  typescript: 5.9.3
+  zod: 4.6.5
+
+# Dependency install scripts are blocked unless reviewed here.
+allowBuilds:
+  esbuild: true
+
+# drizzle-kit's legacy loader pins an old esbuild; use a patched release.
+overrides:
+  "@esbuild-kit/core-utils>esbuild": 0.25.12

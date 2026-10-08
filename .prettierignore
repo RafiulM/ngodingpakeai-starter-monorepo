@@ -1,0 +1,14 @@
+node_modules
+dist
+.output
+.nitro
+.tanstack
+.turbo
+.data
+pnpm-lock.yaml
+apps/api/drizzle/meta
+apps/web/src/routeTree.gen.ts
+playwright-report
+test-results
+*.tsbuildinfo
+.env*

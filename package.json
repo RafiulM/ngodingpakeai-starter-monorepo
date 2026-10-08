@@ -1,0 +1,51 @@
+{
+  "name": "ngodingpakeai-starter-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.6",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev:prepare": "node scripts/prepare.mjs",
+    "dev": "node scripts/prepare.mjs && turbo run dev",
+    "dev:api": "node scripts/prepare.mjs && turbo run dev --filter=@starter/api",
+    "dev:web": "turbo run dev --filter=@starter/web",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "eslint .",
+    "typecheck": "turbo run typecheck && tsc -p tsconfig.json",
+    "check": "pnpm run lint && pnpm run typecheck && pnpm run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @starter/api run db:generate",
+    "db:migrate": "pnpm --filter @starter/api run db:migrate",
+    "db:studio": "pnpm --filter @starter/api run db:studio",
+    "db:up": "node scripts/database.mjs up",
+    "db:down": "node scripts/database.mjs down",
+    "db:status": "node scripts/database.mjs status",
+    "db:logs": "node scripts/database.mjs logs",
+    "role:set": "pnpm --filter @starter/api run role:set",
+    "doctor": "node scripts/doctor.mjs",
+    "test": "node scripts/test.mjs unit",
+    "test:e2e": "node scripts/test.mjs e2e",
+    "test:setup": "node scripts/test-setup.mjs",
+    "create:variant": "node scripts/create-variant.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.63.0",
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "eslint": "9.39.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.12.0",
+    "pg": "catalog:",
+    "prettier": "3.9.6",
+    "turbo": "2.11.7",
+    "typescript": "catalog:",
+    "typescript-eslint": "8.70.0"
+  }
+}

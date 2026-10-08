@@ -1,0 +1,23 @@
+{
+  "name": "@starter/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./permissions": "./src/permissions.ts",
+    "./validators/notes": "./src/validators/notes.ts",
+    "./types": "./src/types/api.ts",
+    "./site": "./src/site.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-auth": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}
